@@ -61,11 +61,6 @@ GEM
       rack (>= 1.0)
     rake (10.0.4)
     redis (3.0.4)
-    redis-activesupport (3.2.3)
-      activesupport (~> 3.2.3)
-      redis-store (~> 1.1.0)
-    redis-store (1.1.3)
-      redis (>= 2.2.0)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -109,7 +104,6 @@ DEPENDENCIES
   rack-test
   rake
   redis
-  redis-activesupport
   second_level_cache!
   sinatra
   sinatra-contrib
