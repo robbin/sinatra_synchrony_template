@@ -41,12 +41,15 @@ GEM
     eventmachine (1.0.3)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
+    faraday (0.8.7)
+      multipart-post (~> 1.1)
     hiredis (0.4.5)
     http_parser.rb (0.5.3)
     i18n (0.6.1)
     method_source (0.8.1)
     minitest (2.12.1)
     multi_json (1.7.3)
+    multipart-post (1.2.0)
     mysql2 (0.3.11)
     oj (2.0.13)
     pry (0.9.12.2)
@@ -100,6 +103,7 @@ DEPENDENCIES
   database_cleaner
   em-synchrony
   factory_girl
+  faraday
   hiredis
   minitest (~> 2.6)
   mysql2

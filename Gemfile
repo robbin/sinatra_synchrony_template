@@ -15,6 +15,8 @@ gem 'redis-activesupport'
 gem "second_level_cache", :git => "git://github.com/csdn-dev/second_level_cache.git"
 gem 'oj'
 
+gem 'faraday'
+
 gem 'rake'
 # gem 'pony'   # pony must be after activerecord
 
