@@ -44,6 +44,7 @@ end
 APP_CONFIG = YAML.load_file(File.expand_path("../config", __FILE__) + '/app_config.yml')[ENV["RACK_ENV"]]
 
 # initialize redis cache
+# CACHE = ActiveSupport::Cache::DalliStore.new("127.0.0.1")
 CACHE = EventMachine::Synchrony::ConnectionPool.new(size: 100) do
   ActiveSupport::Cache.lookup_store :redis_store, { :host => "localhost", :port => "6379", :driver => :synchrony, :expires_in => 1.week }
 end
