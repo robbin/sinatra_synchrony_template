@@ -10,7 +10,8 @@ gem 'activerecord', '~> 3.2', :require => 'active_record'
 gem 'mysql2'
 gem 'hiredis'
 gem 'redis'
-gem 'redis-cache'
+gem 'redis-store'
+gem 'redis-activesupport'
 gem "second_level_cache", :git => "git://github.com/csdn-dev/second_level_cache.git"
 gem 'oj'
 
