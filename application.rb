@@ -43,15 +43,18 @@ end
 # load project config
 APP_CONFIG = YAML.load_file(File.expand_path("../config", __FILE__) + '/app_config.yml')[ENV["RACK_ENV"]]
 
-# # initialize redis cache
-# CACHE = ActiveSupport::Cache::RedisStore.new :host => "127.0.0.1", :driver => :synchrony
-# 
-# # initialize ActiveRecord Cache
-# SecondLevelCache.configure do |config|
-#   config.cache_store = CACHE
-#   config.logger = logger
-#   config.cache_key_prefix = 'domain'
-# end
+# initialize redis cache
+CACHE = EventMachine::Synchrony::ConnectionPool.new(size: 100) do
+  ActiveSupport::Cache.lookup_store :redis_store, { :host => "localhost", :port => "6379", :driver => :synchrony, :expires_in => 1.week }
+end
+CACHE.logger = logger
+
+# initialize ActiveRecord Cache
+SecondLevelCache.configure do |config|
+  config.cache_store = CACHE
+  config.logger = logger
+  config.cache_key_prefix = 'domain'
+end
 
 # Set autoload directory
 %w{models controllers lib}.each do |dir|

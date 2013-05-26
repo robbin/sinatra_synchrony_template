@@ -8,8 +8,9 @@ gem 'em-synchrony', :require => ['em-synchrony', 'em-synchrony/mysql2', 'em-sync
 
 gem 'activerecord', '~> 3.2', :require => 'active_record'
 gem 'mysql2'
-gem 'redis'
 gem 'hiredis'
+gem 'redis'
+gem 'redis-cache'
 gem "second_level_cache", :git => "git://github.com/csdn-dev/second_level_cache.git"
 gem 'oj'
 
